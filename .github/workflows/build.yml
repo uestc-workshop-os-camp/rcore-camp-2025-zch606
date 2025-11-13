@@ -26,6 +26,8 @@ jobs:
         run: |
           qemu-system-riscv64 --version
           rustup target add riscv64gc-unknown-none-elf
+           # 添加 cargo-binutils 安装
+          cargo install cargo-binutils --locked
           git config --global --add safe.directory /__w/${{ github.event.repository.name }}/${{ github.event.repository.name }}
           git clone https://github.com/uestc-workshop-os-camp/rCore-Tutorial-Checker-2025S.git ci-user
           git clone https://github.com/uestc-workshop-os-camp/rCore-Tutorial-Test-2025S.git ci-user/user
